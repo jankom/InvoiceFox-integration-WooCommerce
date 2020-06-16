@@ -350,7 +350,7 @@ if ( ! class_exists( 'WC_InvoiceFox' ) ) {
 						'taxnum'          => '-',
 						'doctype'         => 0,
 						'id_document_ext' => $order->id,
-						'pub_notes'       => $this->conf['order_num_label'] . ' #' . $order->id
+						'pub_notes'       => $this->conf['order_num_label'] . ' #' . $order->get_order_number()
 					), $body2 );
 
 					if ( $r2->isOk() ) {
@@ -468,7 +468,7 @@ if ( ! class_exists( 'WC_InvoiceFox' ) ) {
 						'id_contact_from' => $this->conf['from_warehouse_id'],
 						'taxnum'          => '-',
 						'doctype'         => 1,
-						'pub_notes'       => $this->conf['order_num_label'] . ' #' . $order->id
+						'pub_notes'       => $this->conf['order_num_label'] . ' #' . $order->get_order_number()
 					), $body2 );
 
 					if ( $r2->isOk() ) {
